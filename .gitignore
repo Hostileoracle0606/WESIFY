@@ -40,3 +40,10 @@ scrape_config.json
 .env.*
 *.key
 *.secret
+
+# iOS app - do not commit changes
+ios/WesifyApp/WesifyApp/*.swift
+ios/BUILD_INSTRUCTIONS.md
+ios/QUICK_START.md
+ios/WINDOWS_BUILD_GUIDE.md
+.netlify/
