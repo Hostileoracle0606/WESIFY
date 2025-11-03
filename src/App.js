@@ -169,15 +169,15 @@ const App = () => {
       const classificationPromises = selectedImages.map(img => classifyImage(img.src, img));
       const results = await Promise.all(classificationPromises);
       
-      // Filter for only WES_ANDERSON images (simple yes/no, no confidence threshold)
+      // Filter for only WES_ANDERSON images with >= 95% confidence
       const wesAndersonImages = results.filter(result => 
-        result.prediction === "WES_ANDERSON"
+        result.prediction === "WES_ANDERSON" && result.confidence >= 95
       );
 
       setResults(wesAndersonImages);
       
       if (wesAndersonImages.length === 0) {
-        setError("No images were classified as Wes Anderson style.");
+        setError("No images were classified as Wes Anderson style with 95% or higher confidence.");
       }
 
     } catch (err) {
