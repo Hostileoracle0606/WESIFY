@@ -282,7 +282,8 @@ struct ContentView: View {
             
             for image in selectedImages {
                 if let result = await modelManager.classify(image: image) {
-                    if result.label == "WES_ANDERSON" {
+                    // Only show images with >= 95% confidence for WES_ANDERSON
+                    if result.label == "WES_ANDERSON" && result.confidence >= 95.0 {
                         wesAndersonImages.append(result)
                     }
                 }
@@ -293,7 +294,7 @@ struct ContentView: View {
                 isProcessing = false
                 
                 if wesAndersonImages.isEmpty {
-                    errorMessage = "No images were classified as Wes Anderson style."
+                    errorMessage = "No images were classified as Wes Anderson style with 95% or higher confidence."
                 }
             }
         }
