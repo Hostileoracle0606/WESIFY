@@ -1,0 +1,5 @@
+Model: best_model.h5
+Input shape: (None, 224, 224, 3)
+Output shape: (None, 3)
+TFLite size: 2.55 MB
+Classes: WES_ANDERSON, NOT_WES_ANDERSON, OTHER

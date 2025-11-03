@@ -1,0 +1,13 @@
+/* src/index.css (formerly global.css) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+/* SF Pro is a system font, this import might not work universally or might be a placeholder.
+   Browsers will fall back if it's not available. */
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro:wght@500&display=swap');
+
+body {
+    margin: 0;
+    line-height: normal;
+    /* Set a default background color for the body if the main component doesn't cover it */
+    background-color: #000; /* Keeping a dark background as requested previously */
+    overflow-x: hidden; /* Prevent horizontal scroll due to absolute positioning */
+}

@@ -1,0 +1,515 @@
+/* Apple Glass UI - Wes Anderson App Styles */
+.wes-anderson-app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Background image set via inline style in JSX */
+  background-attachment: fixed;
+  background-size: 120% auto;
+}
+
+/* Background - Image background */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* Background image set via inline style in JSX */
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.locker-room-background {
+  display: none; /* Hide the locker room elements since we're using the image */
+}
+
+/* Left lockers */
+.lockers-left {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.locker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.locker {
+  width: 100%;
+  height: 60px;
+  background: rgba(249, 115, 22, 0.7);
+  border: 1px solid rgba(234, 88, 12, 0.4);
+  border-radius: 8px;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.locker::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 4px;
+  background: rgba(30, 58, 138, 0.8);
+  border-radius: 2px;
+}
+
+.bench {
+  width: 100%;
+  height: 20px;
+  background: rgba(30, 58, 138, 0.7);
+  border-radius: 8px;
+  margin-top: 10px;
+  backdrop-filter: blur(10px);
+}
+
+/* Right lockers */
+.lockers-right {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Central corridor */
+.central-corridor {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.ceiling-lights {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.light {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.9) 0%, rgba(30, 58, 138, 0.7) 70%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.back-wall {
+  width: 100%;
+  height: 200px;
+  background: rgba(30, 58, 138, 0.8);
+  margin-top: auto;
+  border-radius: 12px 12px 0 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Main interface overlay - Apple Glass UI */
+.main-overlay {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(255, 255, 255, 0.2) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Branding section - Apple typography */
+.branding-section {
+  margin-bottom: 40px;
+}
+
+.wesify-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #fbbf24;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-family: 'Futura', 'Futura PT', 'Futura Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 16px 0 0 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Status messages - Glass UI style */
+.status-message {
+  padding: 16px 24px;
+  border-radius: 16px;
+  margin: 24px 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-message.loading {
+  background: rgba(0, 122, 255, 0.1);
+  color: #007AFF;
+  border-color: rgba(0, 122, 255, 0.2);
+}
+
+.status-message.error {
+  background: rgba(255, 59, 48, 0.1);
+  color: #FF3B30;
+  border-color: rgba(255, 59, 48, 0.2);
+}
+
+.status-message.processing {
+  background: rgba(52, 199, 89, 0.1);
+  color: #34C759;
+  border-color: rgba(52, 199, 89, 0.2);
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+/* Apple Glass UI buttons */
+.wes-button {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(255, 255, 255, 0.2) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 140px;
+  letter-spacing: 0.01em;
+}
+
+.wes-button:hover:not(:disabled) {
+  background: rgba(251, 191, 36, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(251, 191, 36, 0.3),
+    0 1px 2px rgba(255, 255, 255, 0.3) inset,
+    0 0 0 1px rgba(251, 191, 36, 0.2);
+  color: #000000;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.wes-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(251, 191, 36, 0.2),
+    0 1px 2px rgba(255, 255, 255, 0.2) inset,
+    0 0 0 1px rgba(251, 191, 36, 0.1);
+}
+
+.wes-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.wes-button.clear-button {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.wes-button.clear-button:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.9);
+  border-color: rgba(239, 68, 68, 1);
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(239, 68, 68, 0.4),
+    0 1px 2px rgba(255, 255, 255, 0.3) inset,
+    0 0 0 1px rgba(239, 68, 68, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Hidden input */
+.hidden-input {
+  display: none;
+}
+
+/* Image preview section - Glass UI */
+.image-preview-section {
+  margin: 40px 0;
+  text-align: left;
+}
+
+.image-preview-section h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.image-preview {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.image-preview:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.image-preview img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.image-preview p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* Results section - Glass UI */
+.results-section {
+  margin: 40px 0;
+  text-align: left;
+}
+
+.results-section h3 {
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.result-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.result-info {
+  padding: 20px;
+}
+
+.result-info .prediction {
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  font-family: 'Futura', 'Futura PT', 'Futura Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.result-info .prediction .label {
+  color: #ffffff;
+  margin-right: 6px;
+}
+
+.result-info .prediction .percentage {
+  color: #03ff5f;
+  font-weight: 700;
+}
+
+.result-info .confidence {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.result-info .filename {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+/* No results message - Glass UI */
+.no-results {
+  text-align: center;
+  margin: 40px 0;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.no-results h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.no-results p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .locker-room-background {
+    padding: 20px;
+  }
+  
+  .content-container {
+    padding: 32px 24px;
+    margin: 16px;
+    border-radius: 20px;
+  }
+  
+  .wesify-title {
+    font-size: 3.5rem;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .wes-button {
+    width: 100%;
+    max-width: 240px;
+  }
+  
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Button hover effects (keeping the original styles) */
+.select-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.select-button:hover {
+  background: rgba(251, 191, 36, 0.8) !important;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(251, 191, 36, 0.3),
+    0 1px 2px rgba(255, 255, 255, 0.3) inset,
+    0 0 0 1px rgba(251, 191, 36, 0.2);
+  color: #000000 !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.start-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.start-button:hover {
+  background: rgba(251, 191, 36, 0.8) !important;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(251, 191, 36, 0.3),
+    0 1px 2px rgba(255, 255, 255, 0.3) inset,
+    0 0 0 1px rgba(251, 191, 36, 0.2);
+  color: #000000 !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.select-button:disabled,
+.start-button:disabled {
+  transform: none !important;
+  box-shadow: none !important;
+}

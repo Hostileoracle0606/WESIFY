@@ -1,0 +1,42 @@
+{
+  "api_keys": {
+    "serpapi": "your_serpapi_key_here",
+    "apify": "your_apify_token_here",
+    "pexels": "your_pexels_key_here"
+  },
+  "settings": {
+    "images_per_class": 200,
+    "delay_between_requests": 0.5,
+    "max_download_attempts": 300
+  },
+  "search_keywords": {
+    "WES_ANDERSON": [
+      "wes anderson aesthetic",
+      "pastel colors photography",
+      "symmetrical composition",
+      "centered subject",
+      "retro pastel",
+      "clean minimal background",
+      "frontal perspective photo"
+    ],
+    "NOT_WES_ANDERSON": [
+      "everyday photography",
+      "natural landscape",
+      "casual snapshot",
+      "modern photography",
+      "street photography",
+      "documentary style",
+      "real world photos"
+    ],
+    "OTHER": [
+      "film noir style",
+      "horror aesthetic",
+      "abstract art",
+      "artistic photography",
+      "cinematic photography",
+      "vintage photography",
+      "different art style"
+    ]
+  }
+}
+
